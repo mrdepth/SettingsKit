@@ -104,6 +104,7 @@
 	[preferences release];
 	[sections release];
 	[visibleSections release];
+	[notReusableCells release];
 	[super dealloc];
 }
 
@@ -353,7 +354,6 @@
 				if (!currentGroup) {
 					SKSetting* group = [SKSetting settingWithDictionary:@{SKType : SKPSGroupSpecifier} viewController:self];
 					NSMutableDictionary* section = [NSMutableDictionary dictionary];
-					section = [NSMutableDictionary dictionary];
 					[section setValue:group forKey:SKGroupKey];
 					[section setValue:[NSMutableArray array] forKey:SKVisibleRowsKey];
 					[sections addObject:section];
