@@ -69,29 +69,19 @@
 
 #pragma mark UITextFieldDelegate
 
-- (BOOL) textFieldShouldReturn:(UITextField *)textField {
+- (BOOL) textFieldShouldReturn:(UITextField *)aTextField {
 	NSIndexPath* myIndexPath = [self.setting.viewController.tableView indexPathForCell:self];
 	
 	NSInteger numberOfSections = self.setting.viewController.visibleSections.count;
-	NSInteger sectionIndex = myIndexPath.section;
 	NSInteger rowIndex = myIndexPath.row + 1;
 	
-	NSMutableArray* indexes = [NSMutableArray array];
-	for (NSInteger index = sectionIndex; index < numberOfSections; index++)
-		[indexes addObject:@(index)];
-	for (NSInteger index = 0; index < sectionIndex; index++)
-		[indexes addObject:@(index)];
-	
-	for (NSNumber* index in indexes) {
-		sectionIndex = [index integerValue];
+	for (NSInteger sectionIndex = myIndexPath.section; sectionIndex < numberOfSections; sectionIndex++) {
 		NSArray* rows = [[self.setting.viewController.visibleSections objectAtIndex:sectionIndex] valueForKey:SKVisibleRowsKey];
 		NSInteger numberOfRows = rows.count;
 		for (; rowIndex < numberOfRows; rowIndex++) {
 			SKSetting* setting = [rows objectAtIndex:rowIndex];
 			if ([setting isKindOfClass:[SKTextFieldSpecifierSetting class]]) {
 				NSIndexPath* indexPath = [NSIndexPath indexPathForRow:rowIndex inSection:sectionIndex];
-				if ([indexPath isEqual:myIndexPath])
-					return YES;
 				[self.setting.viewController.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
 				SKTextFieldCell* cell = (SKTextFieldCell*) [self.setting.viewController tableView:self.setting.viewController.tableView cellForRowAtIndexPath:indexPath];
 				[cell.textField becomeFirstResponder];
@@ -100,7 +90,7 @@
 		}
 		rowIndex = 0;
 	}
-	
+	[aTextField resignFirstResponder];
 	return YES;
 }
 

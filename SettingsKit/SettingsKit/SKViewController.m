@@ -194,14 +194,17 @@
 			}
 		}
 	}
-	
-	[self.tableView beginUpdates];
-	UITableViewRowAnimation animation = animated ? UITableViewRowAnimationFade : UITableViewRowAnimationNone;
-	[self.tableView deleteRowsAtIndexPaths:rowsToDelete withRowAnimation:animation];
-	[self.tableView deleteSections:sectionsToDelete withRowAnimation:animation];
-	[self.tableView insertSections:sectionsToInsert withRowAnimation:animation];
-	[self.tableView insertRowsAtIndexPaths:rowsToInsert withRowAnimation:animation];
-	[self.tableView endUpdates];
+	if (animated) {
+		[self.tableView beginUpdates];
+		UITableViewRowAnimation animation = UITableViewRowAnimationFade;
+		[self.tableView deleteRowsAtIndexPaths:rowsToDelete withRowAnimation:animation];
+		[self.tableView deleteSections:sectionsToDelete withRowAnimation:animation];
+		[self.tableView insertSections:sectionsToInsert withRowAnimation:animation];
+		[self.tableView insertRowsAtIndexPaths:rowsToInsert withRowAnimation:animation];
+		[self.tableView endUpdates];
+	}
+	else
+		[self.tableView reloadData];
 }
 
 - (NSIndexPath*) indexPathForSetting:(SKSetting*) setting {
