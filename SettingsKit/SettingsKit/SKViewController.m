@@ -340,7 +340,6 @@
 	self.notReusableCells = [NSMutableDictionary dictionary];
 	SKSetting<SKGroupSetting>* currentGroup = nil;
 	for (NSDictionary* record in [self.preferences valueForKey:SKPreferenceSpecifiers]) {
-		NSLog(@"%@", record);
 		SKSetting* setting = [SKSetting settingWithDictionary:record viewController:self];
 		if (setting) {
 			if ([setting conformsToProtocol:@protocol(SKGroupSetting)]) {

@@ -23,8 +23,13 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         // Initialization code
+		self.textLabel.numberOfLines = 2;
     }
     return self;
+}
+
+- (void) awakeFromNib {
+	self.textLabel.numberOfLines = 2;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
