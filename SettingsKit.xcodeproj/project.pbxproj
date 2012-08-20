@@ -1,0 +1,471 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		121661D515DE77AE00EB80EF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 121661D415DE77AE00EB80EF /* UIKit.framework */; };
+		121661D715DE77AE00EB80EF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 121661D615DE77AE00EB80EF /* Foundation.framework */; };
+		121661D915DE77AE00EB80EF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 121661D815DE77AE00EB80EF /* CoreGraphics.framework */; };
+		121661DF15DE77AE00EB80EF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 121661DD15DE77AE00EB80EF /* InfoPlist.strings */; };
+		121661E115DE77AE00EB80EF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 121661E015DE77AE00EB80EF /* main.m */; };
+		121661E515DE77AE00EB80EF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 121661E415DE77AE00EB80EF /* AppDelegate.m */; };
+		12C3AACB15E23077004AAF5D /* SKCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C3AA9315E23077004AAF5D /* SKCell.m */; };
+		12C3AACC15E23077004AAF5D /* SKChildPaneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C3AA9515E23077004AAF5D /* SKChildPaneCell.m */; };
+		12C3AACD15E23077004AAF5D /* SKMultiValueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C3AA9715E23077004AAF5D /* SKMultiValueCell.m */; };
+		12C3AACE15E23077004AAF5D /* SKRadioGroupValueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C3AA9915E23077004AAF5D /* SKRadioGroupValueCell.m */; };
+		12C3AACF15E23077004AAF5D /* SKSegmentedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C3AA9B15E23077004AAF5D /* SKSegmentedCell.m */; };
+		12C3AAD015E23077004AAF5D /* SKSegmentedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12C3AA9C15E23077004AAF5D /* SKSegmentedCell.xib */; };
+		12C3AAD115E23077004AAF5D /* SKSliderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C3AA9E15E23077004AAF5D /* SKSliderCell.m */; };
+		12C3AAD215E23077004AAF5D /* SKSliderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12C3AA9F15E23077004AAF5D /* SKSliderCell.xib */; };
+		12C3AAD315E23077004AAF5D /* SKSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C3AAA115E23077004AAF5D /* SKSwitchCell.m */; };
+		12C3AAD415E23077004AAF5D /* SKSwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12C3AAA215E23077004AAF5D /* SKSwitchCell.xib */; };
+		12C3AAD515E23077004AAF5D /* SKTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C3AAA415E23077004AAF5D /* SKTextFieldCell.m */; };
+		12C3AAD615E23077004AAF5D /* SKTextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12C3AAA515E23077004AAF5D /* SKTextFieldCell.xib */; };
+		12C3AAD715E23077004AAF5D /* SKTitleValueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C3AAA715E23077004AAF5D /* SKTitleValueCell.m */; };
+		12C3AAD815E23077004AAF5D /* SKChildPaneSpecifierSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C3AAAA15E23077004AAF5D /* SKChildPaneSpecifierSetting.m */; };
+		12C3AAD915E23077004AAF5D /* SKGroupSpecifierSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C3AAAD15E23077004AAF5D /* SKGroupSpecifierSetting.m */; };
+		12C3AADA15E23077004AAF5D /* SKKeyValueSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C3AAAF15E23077004AAF5D /* SKKeyValueSetting.m */; };
+		12C3AADB15E23077004AAF5D /* SKMultiValueSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C3AAB115E23077004AAF5D /* SKMultiValueSetting.m */; };
+		12C3AADC15E23077004AAF5D /* SKMultiValueSpecifierSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C3AAB315E23077004AAF5D /* SKMultiValueSpecifierSetting.m */; };
+		12C3AADD15E23077004AAF5D /* SKRadioGroupSpecifierSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C3AAB515E23077004AAF5D /* SKRadioGroupSpecifierSetting.m */; };
+		12C3AADE15E23077004AAF5D /* SKRadioGroupValueSpecifierSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C3AAB715E23077004AAF5D /* SKRadioGroupValueSpecifierSetting.m */; };
+		12C3AADF15E23077004AAF5D /* SKSegmentedSpecifierSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C3AAB915E23077004AAF5D /* SKSegmentedSpecifierSetting.m */; };
+		12C3AAE015E23077004AAF5D /* SKSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C3AABB15E23077004AAF5D /* SKSetting.m */; };
+		12C3AAE115E23077004AAF5D /* SKSliderSpecifierSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C3AABD15E23077004AAF5D /* SKSliderSpecifierSetting.m */; };
+		12C3AAE215E23077004AAF5D /* SKTextFieldSpecifierSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C3AABF15E23077004AAF5D /* SKTextFieldSpecifierSetting.m */; };
+		12C3AAE315E23077004AAF5D /* SKTitleValueSpecifierSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C3AAC115E23077004AAF5D /* SKTitleValueSpecifierSetting.m */; };
+		12C3AAE415E23077004AAF5D /* SKToggleSwitchSpecifierSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C3AAC315E23077004AAF5D /* SKToggleSwitchSpecifierSetting.m */; };
+		12C3AAE515E23077004AAF5D /* SKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C3AAC515E23077004AAF5D /* SKViewController.m */; };
+		12C3AAE615E23077004AAF5D /* CaptionTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C3AAC815E23077004AAF5D /* CaptionTextField.m */; };
+		12C3AAE715E23077004AAF5D /* UITableViewCell+Nib.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C3AACA15E23077004AAF5D /* UITableViewCell+Nib.m */; };
+		71B0D68915DFA74500156730 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 71B0D68815DFA74500156730 /* Settings.bundle */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		121661D015DE77AE00EB80EF /* SettingsKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SettingsKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		121661D415DE77AE00EB80EF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		121661D615DE77AE00EB80EF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		121661D815DE77AE00EB80EF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		121661DC15DE77AE00EB80EF /* SettingsKit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SettingsKit-Info.plist"; sourceTree = "<group>"; };
+		121661DE15DE77AE00EB80EF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		121661E015DE77AE00EB80EF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		121661E215DE77AE00EB80EF /* SettingsKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SettingsKit-Prefix.pch"; sourceTree = "<group>"; };
+		121661E315DE77AE00EB80EF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		121661E415DE77AE00EB80EF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		12C3AA9215E23077004AAF5D /* SKCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKCell.h; sourceTree = "<group>"; };
+		12C3AA9315E23077004AAF5D /* SKCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKCell.m; sourceTree = "<group>"; };
+		12C3AA9415E23077004AAF5D /* SKChildPaneCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKChildPaneCell.h; sourceTree = "<group>"; };
+		12C3AA9515E23077004AAF5D /* SKChildPaneCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKChildPaneCell.m; sourceTree = "<group>"; };
+		12C3AA9615E23077004AAF5D /* SKMultiValueCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKMultiValueCell.h; sourceTree = "<group>"; };
+		12C3AA9715E23077004AAF5D /* SKMultiValueCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKMultiValueCell.m; sourceTree = "<group>"; };
+		12C3AA9815E23077004AAF5D /* SKRadioGroupValueCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKRadioGroupValueCell.h; sourceTree = "<group>"; };
+		12C3AA9915E23077004AAF5D /* SKRadioGroupValueCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKRadioGroupValueCell.m; sourceTree = "<group>"; };
+		12C3AA9A15E23077004AAF5D /* SKSegmentedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSegmentedCell.h; sourceTree = "<group>"; };
+		12C3AA9B15E23077004AAF5D /* SKSegmentedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSegmentedCell.m; sourceTree = "<group>"; };
+		12C3AA9C15E23077004AAF5D /* SKSegmentedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SKSegmentedCell.xib; sourceTree = "<group>"; };
+		12C3AA9D15E23077004AAF5D /* SKSliderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSliderCell.h; sourceTree = "<group>"; };
+		12C3AA9E15E23077004AAF5D /* SKSliderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSliderCell.m; sourceTree = "<group>"; };
+		12C3AA9F15E23077004AAF5D /* SKSliderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SKSliderCell.xib; sourceTree = "<group>"; };
+		12C3AAA015E23077004AAF5D /* SKSwitchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSwitchCell.h; sourceTree = "<group>"; };
+		12C3AAA115E23077004AAF5D /* SKSwitchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSwitchCell.m; sourceTree = "<group>"; };
+		12C3AAA215E23077004AAF5D /* SKSwitchCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SKSwitchCell.xib; sourceTree = "<group>"; };
+		12C3AAA315E23077004AAF5D /* SKTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKTextFieldCell.h; sourceTree = "<group>"; };
+		12C3AAA415E23077004AAF5D /* SKTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKTextFieldCell.m; sourceTree = "<group>"; };
+		12C3AAA515E23077004AAF5D /* SKTextFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SKTextFieldCell.xib; sourceTree = "<group>"; };
+		12C3AAA615E23077004AAF5D /* SKTitleValueCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKTitleValueCell.h; sourceTree = "<group>"; };
+		12C3AAA715E23077004AAF5D /* SKTitleValueCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKTitleValueCell.m; sourceTree = "<group>"; };
+		12C3AAA915E23077004AAF5D /* SKChildPaneSpecifierSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKChildPaneSpecifierSetting.h; sourceTree = "<group>"; };
+		12C3AAAA15E23077004AAF5D /* SKChildPaneSpecifierSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKChildPaneSpecifierSetting.m; sourceTree = "<group>"; };
+		12C3AAAB15E23077004AAF5D /* SKGroupSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKGroupSetting.h; sourceTree = "<group>"; };
+		12C3AAAC15E23077004AAF5D /* SKGroupSpecifierSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKGroupSpecifierSetting.h; sourceTree = "<group>"; };
+		12C3AAAD15E23077004AAF5D /* SKGroupSpecifierSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKGroupSpecifierSetting.m; sourceTree = "<group>"; };
+		12C3AAAE15E23077004AAF5D /* SKKeyValueSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKKeyValueSetting.h; sourceTree = "<group>"; };
+		12C3AAAF15E23077004AAF5D /* SKKeyValueSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKKeyValueSetting.m; sourceTree = "<group>"; };
+		12C3AAB015E23077004AAF5D /* SKMultiValueSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKMultiValueSetting.h; sourceTree = "<group>"; };
+		12C3AAB115E23077004AAF5D /* SKMultiValueSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKMultiValueSetting.m; sourceTree = "<group>"; };
+		12C3AAB215E23077004AAF5D /* SKMultiValueSpecifierSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKMultiValueSpecifierSetting.h; sourceTree = "<group>"; };
+		12C3AAB315E23077004AAF5D /* SKMultiValueSpecifierSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKMultiValueSpecifierSetting.m; sourceTree = "<group>"; };
+		12C3AAB415E23077004AAF5D /* SKRadioGroupSpecifierSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKRadioGroupSpecifierSetting.h; sourceTree = "<group>"; };
+		12C3AAB515E23077004AAF5D /* SKRadioGroupSpecifierSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKRadioGroupSpecifierSetting.m; sourceTree = "<group>"; };
+		12C3AAB615E23077004AAF5D /* SKRadioGroupValueSpecifierSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKRadioGroupValueSpecifierSetting.h; sourceTree = "<group>"; };
+		12C3AAB715E23077004AAF5D /* SKRadioGroupValueSpecifierSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKRadioGroupValueSpecifierSetting.m; sourceTree = "<group>"; };
+		12C3AAB815E23077004AAF5D /* SKSegmentedSpecifierSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSegmentedSpecifierSetting.h; sourceTree = "<group>"; };
+		12C3AAB915E23077004AAF5D /* SKSegmentedSpecifierSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSegmentedSpecifierSetting.m; sourceTree = "<group>"; };
+		12C3AABA15E23077004AAF5D /* SKSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSetting.h; sourceTree = "<group>"; };
+		12C3AABB15E23077004AAF5D /* SKSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSetting.m; sourceTree = "<group>"; };
+		12C3AABC15E23077004AAF5D /* SKSliderSpecifierSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSliderSpecifierSetting.h; sourceTree = "<group>"; };
+		12C3AABD15E23077004AAF5D /* SKSliderSpecifierSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSliderSpecifierSetting.m; sourceTree = "<group>"; };
+		12C3AABE15E23077004AAF5D /* SKTextFieldSpecifierSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKTextFieldSpecifierSetting.h; sourceTree = "<group>"; };
+		12C3AABF15E23077004AAF5D /* SKTextFieldSpecifierSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKTextFieldSpecifierSetting.m; sourceTree = "<group>"; };
+		12C3AAC015E23077004AAF5D /* SKTitleValueSpecifierSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKTitleValueSpecifierSetting.h; sourceTree = "<group>"; };
+		12C3AAC115E23077004AAF5D /* SKTitleValueSpecifierSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKTitleValueSpecifierSetting.m; sourceTree = "<group>"; };
+		12C3AAC215E23077004AAF5D /* SKToggleSwitchSpecifierSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKToggleSwitchSpecifierSetting.h; sourceTree = "<group>"; };
+		12C3AAC315E23077004AAF5D /* SKToggleSwitchSpecifierSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKToggleSwitchSpecifierSetting.m; sourceTree = "<group>"; };
+		12C3AAC415E23077004AAF5D /* SKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKViewController.h; sourceTree = "<group>"; };
+		12C3AAC515E23077004AAF5D /* SKViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKViewController.m; sourceTree = "<group>"; };
+		12C3AAC715E23077004AAF5D /* CaptionTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptionTextField.h; sourceTree = "<group>"; };
+		12C3AAC815E23077004AAF5D /* CaptionTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptionTextField.m; sourceTree = "<group>"; };
+		12C3AAC915E23077004AAF5D /* UITableViewCell+Nib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+Nib.h"; sourceTree = "<group>"; };
+		12C3AACA15E23077004AAF5D /* UITableViewCell+Nib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+Nib.m"; sourceTree = "<group>"; };
+		71B0D68815DFA74500156730 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		121661CD15DE77AE00EB80EF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				121661D515DE77AE00EB80EF /* UIKit.framework in Frameworks */,
+				121661D715DE77AE00EB80EF /* Foundation.framework in Frameworks */,
+				121661D915DE77AE00EB80EF /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		121661C515DE77AE00EB80EF = {
+			isa = PBXGroup;
+			children = (
+				121661DA15DE77AE00EB80EF /* SettingsKit */,
+				121661D315DE77AE00EB80EF /* Frameworks */,
+				121661D115DE77AE00EB80EF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		121661D115DE77AE00EB80EF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				121661D015DE77AE00EB80EF /* SettingsKit.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		121661D315DE77AE00EB80EF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				121661D415DE77AE00EB80EF /* UIKit.framework */,
+				121661D615DE77AE00EB80EF /* Foundation.framework */,
+				121661D815DE77AE00EB80EF /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		121661DA15DE77AE00EB80EF /* SettingsKit */ = {
+			isa = PBXGroup;
+			children = (
+				12C3AA9015E23077004AAF5D /* SettingsKit */,
+				121661E315DE77AE00EB80EF /* AppDelegate.h */,
+				121661E415DE77AE00EB80EF /* AppDelegate.m */,
+				121661DB15DE77AE00EB80EF /* Supporting Files */,
+			);
+			path = SettingsKit;
+			sourceTree = "<group>";
+		};
+		121661DB15DE77AE00EB80EF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				121661DC15DE77AE00EB80EF /* SettingsKit-Info.plist */,
+				121661DD15DE77AE00EB80EF /* InfoPlist.strings */,
+				121661E015DE77AE00EB80EF /* main.m */,
+				121661E215DE77AE00EB80EF /* SettingsKit-Prefix.pch */,
+				71B0D68815DFA74500156730 /* Settings.bundle */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		12C3AA9015E23077004AAF5D /* SettingsKit */ = {
+			isa = PBXGroup;
+			children = (
+				12C3AA9115E23077004AAF5D /* Cells */,
+				12C3AAA815E23077004AAF5D /* Settings */,
+				12C3AAC415E23077004AAF5D /* SKViewController.h */,
+				12C3AAC515E23077004AAF5D /* SKViewController.m */,
+				12C3AAC615E23077004AAF5D /* Utility */,
+			);
+			path = SettingsKit;
+			sourceTree = "<group>";
+		};
+		12C3AA9115E23077004AAF5D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				12C3AA9215E23077004AAF5D /* SKCell.h */,
+				12C3AA9315E23077004AAF5D /* SKCell.m */,
+				12C3AA9415E23077004AAF5D /* SKChildPaneCell.h */,
+				12C3AA9515E23077004AAF5D /* SKChildPaneCell.m */,
+				12C3AA9615E23077004AAF5D /* SKMultiValueCell.h */,
+				12C3AA9715E23077004AAF5D /* SKMultiValueCell.m */,
+				12C3AA9815E23077004AAF5D /* SKRadioGroupValueCell.h */,
+				12C3AA9915E23077004AAF5D /* SKRadioGroupValueCell.m */,
+				12C3AA9A15E23077004AAF5D /* SKSegmentedCell.h */,
+				12C3AA9B15E23077004AAF5D /* SKSegmentedCell.m */,
+				12C3AA9C15E23077004AAF5D /* SKSegmentedCell.xib */,
+				12C3AA9D15E23077004AAF5D /* SKSliderCell.h */,
+				12C3AA9E15E23077004AAF5D /* SKSliderCell.m */,
+				12C3AA9F15E23077004AAF5D /* SKSliderCell.xib */,
+				12C3AAA015E23077004AAF5D /* SKSwitchCell.h */,
+				12C3AAA115E23077004AAF5D /* SKSwitchCell.m */,
+				12C3AAA215E23077004AAF5D /* SKSwitchCell.xib */,
+				12C3AAA315E23077004AAF5D /* SKTextFieldCell.h */,
+				12C3AAA415E23077004AAF5D /* SKTextFieldCell.m */,
+				12C3AAA515E23077004AAF5D /* SKTextFieldCell.xib */,
+				12C3AAA615E23077004AAF5D /* SKTitleValueCell.h */,
+				12C3AAA715E23077004AAF5D /* SKTitleValueCell.m */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		12C3AAA815E23077004AAF5D /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				12C3AAA915E23077004AAF5D /* SKChildPaneSpecifierSetting.h */,
+				12C3AAAA15E23077004AAF5D /* SKChildPaneSpecifierSetting.m */,
+				12C3AAAB15E23077004AAF5D /* SKGroupSetting.h */,
+				12C3AAAC15E23077004AAF5D /* SKGroupSpecifierSetting.h */,
+				12C3AAAD15E23077004AAF5D /* SKGroupSpecifierSetting.m */,
+				12C3AAAE15E23077004AAF5D /* SKKeyValueSetting.h */,
+				12C3AAAF15E23077004AAF5D /* SKKeyValueSetting.m */,
+				12C3AAB015E23077004AAF5D /* SKMultiValueSetting.h */,
+				12C3AAB115E23077004AAF5D /* SKMultiValueSetting.m */,
+				12C3AAB215E23077004AAF5D /* SKMultiValueSpecifierSetting.h */,
+				12C3AAB315E23077004AAF5D /* SKMultiValueSpecifierSetting.m */,
+				12C3AAB415E23077004AAF5D /* SKRadioGroupSpecifierSetting.h */,
+				12C3AAB515E23077004AAF5D /* SKRadioGroupSpecifierSetting.m */,
+				12C3AAB615E23077004AAF5D /* SKRadioGroupValueSpecifierSetting.h */,
+				12C3AAB715E23077004AAF5D /* SKRadioGroupValueSpecifierSetting.m */,
+				12C3AAB815E23077004AAF5D /* SKSegmentedSpecifierSetting.h */,
+				12C3AAB915E23077004AAF5D /* SKSegmentedSpecifierSetting.m */,
+				12C3AABA15E23077004AAF5D /* SKSetting.h */,
+				12C3AABB15E23077004AAF5D /* SKSetting.m */,
+				12C3AABC15E23077004AAF5D /* SKSliderSpecifierSetting.h */,
+				12C3AABD15E23077004AAF5D /* SKSliderSpecifierSetting.m */,
+				12C3AABE15E23077004AAF5D /* SKTextFieldSpecifierSetting.h */,
+				12C3AABF15E23077004AAF5D /* SKTextFieldSpecifierSetting.m */,
+				12C3AAC015E23077004AAF5D /* SKTitleValueSpecifierSetting.h */,
+				12C3AAC115E23077004AAF5D /* SKTitleValueSpecifierSetting.m */,
+				12C3AAC215E23077004AAF5D /* SKToggleSwitchSpecifierSetting.h */,
+				12C3AAC315E23077004AAF5D /* SKToggleSwitchSpecifierSetting.m */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		12C3AAC615E23077004AAF5D /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				12C3AAC715E23077004AAF5D /* CaptionTextField.h */,
+				12C3AAC815E23077004AAF5D /* CaptionTextField.m */,
+				12C3AAC915E23077004AAF5D /* UITableViewCell+Nib.h */,
+				12C3AACA15E23077004AAF5D /* UITableViewCell+Nib.m */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		121661CF15DE77AE00EB80EF /* SettingsKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 121661E815DE77AE00EB80EF /* Build configuration list for PBXNativeTarget "SettingsKit" */;
+			buildPhases = (
+				121661CC15DE77AE00EB80EF /* Sources */,
+				121661CD15DE77AE00EB80EF /* Frameworks */,
+				121661CE15DE77AE00EB80EF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SettingsKit;
+			productName = SettingsKit;
+			productReference = 121661D015DE77AE00EB80EF /* SettingsKit.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		121661C715DE77AE00EB80EF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "Artem Shimanski";
+			};
+			buildConfigurationList = 121661CA15DE77AE00EB80EF /* Build configuration list for PBXProject "SettingsKit" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 121661C515DE77AE00EB80EF;
+			productRefGroup = 121661D115DE77AE00EB80EF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				121661CF15DE77AE00EB80EF /* SettingsKit */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		121661CE15DE77AE00EB80EF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				121661DF15DE77AE00EB80EF /* InfoPlist.strings in Resources */,
+				71B0D68915DFA74500156730 /* Settings.bundle in Resources */,
+				12C3AAD015E23077004AAF5D /* SKSegmentedCell.xib in Resources */,
+				12C3AAD215E23077004AAF5D /* SKSliderCell.xib in Resources */,
+				12C3AAD415E23077004AAF5D /* SKSwitchCell.xib in Resources */,
+				12C3AAD615E23077004AAF5D /* SKTextFieldCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		121661CC15DE77AE00EB80EF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				121661E115DE77AE00EB80EF /* main.m in Sources */,
+				121661E515DE77AE00EB80EF /* AppDelegate.m in Sources */,
+				12C3AACB15E23077004AAF5D /* SKCell.m in Sources */,
+				12C3AACC15E23077004AAF5D /* SKChildPaneCell.m in Sources */,
+				12C3AACD15E23077004AAF5D /* SKMultiValueCell.m in Sources */,
+				12C3AACE15E23077004AAF5D /* SKRadioGroupValueCell.m in Sources */,
+				12C3AACF15E23077004AAF5D /* SKSegmentedCell.m in Sources */,
+				12C3AAD115E23077004AAF5D /* SKSliderCell.m in Sources */,
+				12C3AAD315E23077004AAF5D /* SKSwitchCell.m in Sources */,
+				12C3AAD515E23077004AAF5D /* SKTextFieldCell.m in Sources */,
+				12C3AAD715E23077004AAF5D /* SKTitleValueCell.m in Sources */,
+				12C3AAD815E23077004AAF5D /* SKChildPaneSpecifierSetting.m in Sources */,
+				12C3AAD915E23077004AAF5D /* SKGroupSpecifierSetting.m in Sources */,
+				12C3AADA15E23077004AAF5D /* SKKeyValueSetting.m in Sources */,
+				12C3AADB15E23077004AAF5D /* SKMultiValueSetting.m in Sources */,
+				12C3AADC15E23077004AAF5D /* SKMultiValueSpecifierSetting.m in Sources */,
+				12C3AADD15E23077004AAF5D /* SKRadioGroupSpecifierSetting.m in Sources */,
+				12C3AADE15E23077004AAF5D /* SKRadioGroupValueSpecifierSetting.m in Sources */,
+				12C3AADF15E23077004AAF5D /* SKSegmentedSpecifierSetting.m in Sources */,
+				12C3AAE015E23077004AAF5D /* SKSetting.m in Sources */,
+				12C3AAE115E23077004AAF5D /* SKSliderSpecifierSetting.m in Sources */,
+				12C3AAE215E23077004AAF5D /* SKTextFieldSpecifierSetting.m in Sources */,
+				12C3AAE315E23077004AAF5D /* SKTitleValueSpecifierSetting.m in Sources */,
+				12C3AAE415E23077004AAF5D /* SKToggleSwitchSpecifierSetting.m in Sources */,
+				12C3AAE515E23077004AAF5D /* SKViewController.m in Sources */,
+				12C3AAE615E23077004AAF5D /* CaptionTextField.m in Sources */,
+				12C3AAE715E23077004AAF5D /* UITableViewCell+Nib.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		121661DD15DE77AE00EB80EF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				121661DE15DE77AE00EB80EF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		121661E615DE77AE00EB80EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		121661E715DE77AE00EB80EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		121661E915DE77AE00EB80EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SettingsKit/SettingsKit-Prefix.pch";
+				INFOPLIST_FILE = "SettingsKit/SettingsKit-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		121661EA15DE77AE00EB80EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SettingsKit/SettingsKit-Prefix.pch";
+				INFOPLIST_FILE = "SettingsKit/SettingsKit-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		121661CA15DE77AE00EB80EF /* Build configuration list for PBXProject "SettingsKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				121661E615DE77AE00EB80EF /* Debug */,
+				121661E715DE77AE00EB80EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		121661E815DE77AE00EB80EF /* Build configuration list for PBXNativeTarget "SettingsKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				121661E915DE77AE00EB80EF /* Debug */,
+				121661EA15DE77AE00EB80EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 121661C715DE77AE00EB80EF /* Project object */;
+}
