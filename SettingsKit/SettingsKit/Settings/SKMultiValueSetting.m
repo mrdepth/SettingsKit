@@ -35,9 +35,6 @@
 			self.values = [self.viewController valueForKey:self.valuesKeyPath];
 		
 
-		if (!titlesTmp && self.titlesKeyPath)
-			titlesTmp = [self.viewController valueForKey:self.titlesKeyPath];
-		
 		if (titlesTmp) {
 			NSMutableArray* localizedTitles = [NSMutableArray array];
 			for (NSString* string in titlesTmp) {
@@ -45,6 +42,9 @@
 			}
 			self.titles = localizedTitles;
 		}
+		else if (!titlesTmp && self.titlesKeyPath)
+			self.titles = [self.viewController valueForKey:self.titlesKeyPath];
+		
 	}
 	return self;
 }

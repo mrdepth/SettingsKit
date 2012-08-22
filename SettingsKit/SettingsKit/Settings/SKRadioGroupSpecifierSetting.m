@@ -25,13 +25,10 @@
 	if (self = [super initWithDictionary:dictionary viewController:aViewController]) {
 		self.footerText = [dictionary valueForKey:SKFooterText];
 		self.footerTextKeyPath = [dictionary valueForKey:SKFooterTextKeyPath];
-		if (!self.footerText && self.footerTextKeyPath)
-			self.footerText = [self.viewController valueForKey:self.footerTextKeyPath];
 		
-		if (self.footerText)
-			self.footerText = NSLocalizedStringFromTableInBundle(self.footerText, self.viewController.stringsTable, self.viewController.bundle, nil);
+		if (footerText)
+			self.footerText = NSLocalizedStringFromTableInBundle(footerText, self.viewController.stringsTable, self.viewController.bundle, nil);
 
-		
 		self.settings = [NSMutableArray array];
 		int n = self.values.count;
 		for (int i = 0; i < n; i++) {
@@ -46,6 +43,15 @@
 	[settings release];
 	[footerTextKeyPath release];
 	[super dealloc];
+}
+
+- (NSString*) footerText {
+	if (footerText)
+		return footerText;
+	else if (self.footerTextKeyPath)
+		return [self.viewController valueForKey:self.footerTextKeyPath];
+	else
+		return nil;
 }
 
 @end
