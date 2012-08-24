@@ -34,10 +34,12 @@
 }
 */
 
+#if ! __has_feature(objc_arc)
 - (void)dealloc {
 	[sliderView release];
 	[super dealloc];
 }
+#endif
 
 - (NSObject*) value {
 	return @(sliderView.value);

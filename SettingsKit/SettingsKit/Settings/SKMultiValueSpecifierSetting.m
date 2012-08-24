@@ -29,11 +29,13 @@
 	return self;
 }
 
+#if ! __has_feature(objc_arc)
 - (void) dealloc {
 	[shortTitles release];
 	[shortTitlesKeyPath release];
 	[super dealloc];
 }
+#endif
 
 - (NSString*) valueShortTitle {
 	if (self.values && self.shortTitles && self.value) {

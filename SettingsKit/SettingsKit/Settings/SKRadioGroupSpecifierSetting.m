@@ -32,18 +32,24 @@
 		self.settings = [NSMutableArray array];
 		int n = self.values.count;
 		for (int i = 0; i < n; i++) {
-			[self.settings addObject:[[[SKRadioGroupValueSpecifierSetting alloc] initWithRadioGroup:self value:[self.values objectAtIndex:i] title:[self.titles objectAtIndex:i] viewController:self.viewController] autorelease]];
+			SKRadioGroupValueSpecifierSetting* setting = [[SKRadioGroupValueSpecifierSetting alloc] initWithRadioGroup:self value:[self.values objectAtIndex:i] title:[self.titles objectAtIndex:i] viewController:self.viewController];
+#if ! __has_feature(objc_arc)
+			[setting autorelease];
+#endif
+			[self.settings addObject:setting];
 		}
 	}
 	return self;
 }
 
+#if ! __has_feature(objc_arc)
 - (void) dealloc {
 	[footerText release];
 	[settings release];
 	[footerTextKeyPath release];
 	[super dealloc];
 }
+#endif
 
 - (NSString*) footerText {
 	if (footerText)

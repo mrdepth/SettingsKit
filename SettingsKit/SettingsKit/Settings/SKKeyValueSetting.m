@@ -54,6 +54,7 @@
 	return self;
 }
 
+#if ! __has_feature(objc_arc)
 - (void) dealloc {
 	[key release];
 	[defaultValue release];
@@ -62,6 +63,7 @@
 	
 	[super dealloc];
 }
+#endif
 
 - (NSObject*) value {
 	NSObject* value = nil;

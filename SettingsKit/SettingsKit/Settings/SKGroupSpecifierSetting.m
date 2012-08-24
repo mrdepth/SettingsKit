@@ -33,12 +33,14 @@
 	return self;
 }
 
+#if ! __has_feature(objc_arc)
 - (void) dealloc {
 	[footerText release];
 	[settings release];
 	[footerTextKeyPath release];
 	[super dealloc];
 }
+#endif
 
 - (NSString*) footerText {
 	if (footerText)

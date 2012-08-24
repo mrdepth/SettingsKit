@@ -38,10 +38,12 @@
     [super setSelected:selected animated:animated];
 }
 
+#if ! __has_feature(objc_arc)
 - (void)dealloc {
 	[textField release];
 	[super dealloc];
 }
+#endif
 
 - (IBAction)onChangeText:(id)sender {
 	[self didChangeValue];

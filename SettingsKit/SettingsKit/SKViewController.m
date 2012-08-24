@@ -77,7 +77,11 @@
 				controller.title = [controller valueForKey:titleKeyPath];
 		}
 		[controller reload];
+#if ! __has_feature(objc_arc)
 		return [controller autorelease];
+#else
+		return controller;
+#endif
 	}
 	else
 		return nil;
@@ -97,6 +101,7 @@
     return self;
 }
 
+#if ! __has_feature(objc_arc)
 - (void) dealloc {
 	[settingsObject release];
 	[stringsTable release];
@@ -107,6 +112,7 @@
 	[notReusableCells release];
 	[super dealloc];
 }
+#endif
 
 - (void)viewDidLoad
 {
@@ -289,8 +295,12 @@
 		if (!cell) {
 			if (nibName)
 				cell = [cellClass cellWithNibName:nibName bundle:nil reuseIdentifier:cellIdentifier];
-			else
-				cell = [[[cellClass alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier] autorelease];
+			else {
+				cell = [[cellClass alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier];
+#if ! __has_feature(objc_arc)
+				[cell autorelease];
+#endif
+			}
 		}
 		cell.accessoryType = UITableViewCellAccessoryNone;
 		cell.setting = setting;
@@ -301,8 +311,12 @@
 		if (!cell) {
 			if (nibName)
 				cell = [cellClass cellWithNibName:nibName bundle:nil reuseIdentifier:cellIdentifier];
-			else
-				cell = [[[cellClass alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier] autorelease];
+			else {
+				cell = [[cellClass alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier];
+#if ! __has_feature(objc_arc)
+				[cell autorelease];
+#endif
+			}
 			[self.notReusableCells setObject:cell forKey:key];
 			cell.accessoryType = UITableViewCellAccessoryNone;
 			cell.setting = setting;

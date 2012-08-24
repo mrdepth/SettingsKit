@@ -25,9 +25,11 @@
 	return self;
 }
 
+#if ! __has_feature(objc_arc)
 - (void) dealloc {
 	[file release];
 	[super dealloc];
 }
+#endif
 
 @end

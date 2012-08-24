@@ -36,6 +36,7 @@
 	return self;
 }
 
+#if ! __has_feature(objc_arc)
 - (void) dealloc {
 	[minimumValue release];
 	[maximumValue release];
@@ -43,5 +44,6 @@
 	[maximumValueImage release];
 	[super dealloc];
 }
+#endif
 
 @end

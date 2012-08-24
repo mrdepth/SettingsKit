@@ -19,7 +19,7 @@
 #import "SKSegmentedSpecifierSetting.h"
 
 @interface SKSetting()
-@property (nonatomic, readwrite, retain) SKViewController* viewController;
+@property (nonatomic, readwrite, assign) SKViewController* viewController;
 @property (nonatomic, readwrite, retain) NSString* title;
 @property (nonatomic, readwrite, retain) NSString* onlyDisplayOnInterfaceIdiom;
 @property (nonatomic, retain) NSString* titleKeyPath;
@@ -40,26 +40,29 @@
 
 + (id) settingWithDictionary:(NSDictionary*) dictionary viewController:(SKViewController*) viewController {
 	NSString* type = [dictionary valueForKey:SKType];
+	SKSetting* setting = nil;
 	if ([type isEqualToString:SKPSTitleValueSpecifier])
-		return [[[SKTitleValueSpecifierSetting alloc] initWithDictionary:dictionary viewController:viewController] autorelease];
+		setting = [[SKTitleValueSpecifierSetting alloc] initWithDictionary:dictionary viewController:viewController];
 	else if ([type isEqualToString:SKPSTextFieldSpecifier])
-		return [[[SKTextFieldSpecifierSetting alloc] initWithDictionary:dictionary viewController:viewController] autorelease];
+		setting = [[SKTextFieldSpecifierSetting alloc] initWithDictionary:dictionary viewController:viewController];
 	else if ([type isEqualToString:SKPSToggleSwitchSpecifier])
-		return [[[SKToggleSwitchSpecifierSetting alloc] initWithDictionary:dictionary viewController:viewController] autorelease];
+		setting = [[SKToggleSwitchSpecifierSetting alloc] initWithDictionary:dictionary viewController:viewController];
 	else if ([type isEqualToString:SKPSSliderSpecifier])
-		return [[[SKSliderSpecifierSetting alloc] initWithDictionary:dictionary viewController:viewController] autorelease];
+		setting = [[SKSliderSpecifierSetting alloc] initWithDictionary:dictionary viewController:viewController];
 	else if ([type isEqualToString:SKPSMultiValueSpecifier])
-		return [[[SKMultiValueSpecifierSetting alloc] initWithDictionary:dictionary viewController:viewController] autorelease];
+		setting = [[SKMultiValueSpecifierSetting alloc] initWithDictionary:dictionary viewController:viewController];
 	else if ([type isEqualToString:SKPSChildPaneSpecifier])
-		return [[[SKChildPaneSpecifierSetting alloc] initWithDictionary:dictionary viewController:viewController] autorelease];
+		setting = [[SKChildPaneSpecifierSetting alloc] initWithDictionary:dictionary viewController:viewController];
 	else if ([type isEqualToString:SKPSGroupSpecifier])
-		return [[[SKGroupSpecifierSetting alloc] initWithDictionary:dictionary viewController:viewController] autorelease];
+		setting = [[SKGroupSpecifierSetting alloc] initWithDictionary:dictionary viewController:viewController];
 	else if ([type isEqualToString:SKPSRadioGroupSpecifier])
-		return [[[SKRadioGroupSpecifierSetting alloc] initWithDictionary:dictionary viewController:viewController] autorelease];
+		setting = [[SKRadioGroupSpecifierSetting alloc] initWithDictionary:dictionary viewController:viewController];
 	else if ([type isEqualToString:SKSegmentedSpecifier])
-		return [[[SKSegmentedSpecifierSetting alloc] initWithDictionary:dictionary viewController:viewController] autorelease];
-	else
-		return nil;
+		setting = [[SKSegmentedSpecifierSetting alloc] initWithDictionary:dictionary viewController:viewController];
+#if ! __has_feature(objc_arc)
+	[setting autorelease];
+#endif
+	return setting;
 }
 
 - (id) initWithDictionary:(NSDictionary*) dictionary viewController:(SKViewController*) aViewController {
@@ -108,14 +111,16 @@
 	}
 	return self;
 }
+
+#if ! __has_feature(objc_arc)
 - (void) dealloc {
-	[viewController release];
 	[title release];
 	[onlyDisplayOnInterfaceIdiom release];
 	[titleKeyPath release];
 	[predicate release];
 	[super dealloc];
 }
+#endif
 
 - (BOOL) isHidden {
 	if (!self.displayOnCurrentInterfaceIdiom)

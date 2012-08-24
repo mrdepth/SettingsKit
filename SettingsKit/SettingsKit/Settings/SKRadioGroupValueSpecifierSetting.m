@@ -11,7 +11,7 @@
 @interface SKRadioGroupValueSpecifierSetting()
 @property (nonatomic, readwrite, retain) NSObject* value;
 @property (nonatomic, readwrite, retain) NSString* title;
-@property (nonatomic, readwrite, retain) SKRadioGroupSpecifierSetting* radioGroup;
+@property (nonatomic, readwrite, assign) SKRadioGroupSpecifierSetting* radioGroup;
 @end
 
 @implementation SKRadioGroupValueSpecifierSetting
@@ -27,10 +27,11 @@
 	return self;
 }
 
+#if ! __has_feature(objc_arc)
 - (void) dealloc {
 	[value release];
-	[radioGroup release];
 	[super dealloc];
 }
+#endif
 
 @end

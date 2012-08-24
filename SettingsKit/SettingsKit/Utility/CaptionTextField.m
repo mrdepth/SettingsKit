@@ -11,10 +11,12 @@
 @implementation CaptionTextField
 @synthesize captionLabel;
 
+#if ! __has_feature(objc_arc)
 - (void) dealloc {
 	[captionLabel release];
 	[super dealloc];
 }
+#endif
 
 - (UILabel*) captionLabel {
 	if (!captionLabel) {

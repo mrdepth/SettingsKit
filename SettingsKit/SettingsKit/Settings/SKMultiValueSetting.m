@@ -58,4 +58,15 @@
 	return nil;
 }
 
+#if ! __has_feature(objc_arc)
+- (void) dealloc {
+	[values release];
+	[titles release];
+	[valuesKeyPath release];
+	[titlesKeyPath release];
+	
+	[super dealloc];
+}
+#endif
+
 @end

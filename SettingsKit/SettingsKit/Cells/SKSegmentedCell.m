@@ -21,10 +21,12 @@
 //
 //}
 
+#if ! __has_feature(objc_arc)
 - (void)dealloc {
     [segmentView release];
     [super dealloc];
 }
+#endif
 
 - (NSObject*) value {
 	return [self.setting.values objectAtIndex:self.segmentView.selectedSegmentIndex];
@@ -42,7 +44,10 @@
 	[super setSetting:setting];
 	self.textLabel.text = setting.title;
 	
-	UISegmentedControl* segmentedControl = [[[UISegmentedControl alloc] initWithItems:setting.titles] autorelease];
+	UISegmentedControl* segmentedControl = [[UISegmentedControl alloc] initWithItems:setting.titles];
+#if ! __has_feature(objc_arc)
+	[segmentedControl autorelease];
+#endif
 	segmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
 	[segmentedControl addTarget:self action:@selector(onChangeValue:) forControlEvents:UIControlEventValueChanged];
 	segmentedControl.selectedSegmentIndex = [setting.values indexOfObject:setting.value];

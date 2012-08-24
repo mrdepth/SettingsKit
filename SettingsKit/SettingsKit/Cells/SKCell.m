@@ -39,10 +39,12 @@
     // Configure the view for the selected state
 }
 
+#if ! __has_feature(objc_arc)
 - (void) dealloc {
 	[setting release];
 	[super dealloc];
 }
+#endif
 
 - (NSObject*) value {
 	return nil;
