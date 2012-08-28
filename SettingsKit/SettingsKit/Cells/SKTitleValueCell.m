@@ -38,7 +38,13 @@
 	[super setSetting:setting];
 	
 	self.textLabel.text = setting.title;
-	self.detailTextLabel.text = setting.valueTitle;
+	NSString* valueTitle = setting.valueTitle;
+	if (!valueTitle) {
+		NSObject* value = setting.value;
+		if ([value isKindOfClass:[NSString class]])
+			valueTitle = (NSString*) value;
+	}
+	self.detailTextLabel.text = valueTitle;
 	self.accessoryType = setting.accessoryType;
 }
 
