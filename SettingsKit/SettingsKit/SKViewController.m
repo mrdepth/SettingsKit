@@ -349,8 +349,8 @@
 - (void) reload {
 	if (!self.bundle)
 		self.bundle = [NSBundle mainBundle];
-	self.title = [self.preferences valueForKey:SKTitle];
 	self.stringsTable = [self.preferences valueForKey:SKStringsTable];
+	self.title = NSLocalizedStringFromTableInBundle([self.preferences valueForKey:SKTitle], self.stringsTable, self.bundle, nil);
 
 	self.sections = [NSMutableArray array];
 	self.visibleSections = [NSMutableArray array];
