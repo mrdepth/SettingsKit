@@ -67,6 +67,11 @@
 	self.textField.keyboardType = setting.keyboardType;
 	self.textField.autocapitalizationType = setting.autocapitalizationType;
 	self.textField.autocorrectionType = setting.autocorrectionType;
+
+	if (setting.image)
+		self.imageView.image = [UIImage imageNamed:setting.image];
+	else
+		self.imageView.image = nil;
 }
 
 #pragma mark UITextFieldDelegate

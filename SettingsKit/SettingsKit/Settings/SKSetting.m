@@ -21,6 +21,7 @@
 @interface SKSetting()
 @property (nonatomic, readwrite, assign) SKViewController* viewController;
 @property (nonatomic, readwrite, retain) NSString* title;
+@property (nonatomic, readwrite, retain) NSString* image;
 @property (nonatomic, readwrite, retain) NSString* onlyDisplayOnInterfaceIdiom;
 @property (nonatomic, retain) NSString* titleKeyPath;
 @property (nonatomic, retain) NSPredicate* predicate;
@@ -32,6 +33,7 @@
 @implementation SKSetting
 @synthesize viewController;
 @synthesize title;
+@synthesize image;
 @synthesize titleKeyPath;
 @synthesize onlyDisplayOnInterfaceIdiom;
 @synthesize predicate;
@@ -75,6 +77,7 @@
 			self.title = [self.viewController valueForKey:self.titleKeyPath];
 		if (self.title)
 			self.title = NSLocalizedStringFromTableInBundle(self.title, self.viewController.stringsTable, self.viewController.bundle, nil);
+		self.image = [dictionary valueForKey:SKImage];
 		
 		self.displayOnCurrentInterfaceIdiom = YES;
 		self.onlyDisplayOnInterfaceIdiom = [dictionary valueForKey:SKOnlyDisplayOnInterfaceIdiom];
@@ -115,6 +118,7 @@
 #if ! __has_feature(objc_arc)
 - (void) dealloc {
 	[title release];
+	[image release];
 	[onlyDisplayOnInterfaceIdiom release];
 	[titleKeyPath release];
 	[predicate release];

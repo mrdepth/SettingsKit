@@ -12,6 +12,7 @@
 @interface SKSetting : NSObject
 @property (nonatomic, readonly, assign) SKViewController* viewController;
 @property (nonatomic, readonly, retain) NSString* title;
+@property (nonatomic, readonly, retain) NSString* image;
 @property (nonatomic, readonly, retain) NSString* onlyDisplayOnInterfaceIdiom;
 @property (nonatomic, readonly, getter = isHidden) BOOL hidden;
 

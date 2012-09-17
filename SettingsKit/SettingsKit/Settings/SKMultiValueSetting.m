@@ -12,6 +12,7 @@
 @interface SKMultiValueSetting()
 @property (nonatomic, readwrite, retain) NSArray* values;
 @property (nonatomic, readwrite, retain) NSArray* titles;
+@property (nonatomic, readwrite, retain) NSArray* images;
 @property(nonatomic, retain) NSString* valuesKeyPath;
 @property(nonatomic, retain) NSString* titlesKeyPath;
 
@@ -21,6 +22,7 @@
 @implementation SKMultiValueSetting
 @synthesize values;
 @synthesize titles;
+@synthesize images;
 @synthesize valuesKeyPath;
 @synthesize titlesKeyPath;
 
@@ -30,6 +32,7 @@
 		NSMutableArray* titlesTmp = [dictionary valueForKey:SKTitles];
 		self.valuesKeyPath = [dictionary valueForKey:SKValuesKeyPath];
 		self.titlesKeyPath = [dictionary valueForKey:SKTitlesKeyPath];
+		self.images = [dictionary valueForKey:SKImages];
 		
 		if (!self.values && self.valuesKeyPath)
 			self.values = [self.viewController valueForKey:self.valuesKeyPath];
@@ -58,10 +61,21 @@
 	return nil;
 }
 
+- (NSString*) valueImage {
+	if (self.values && self.images && self.value) {
+		NSInteger index = [self.values indexOfObject:self.value];
+		if (index != NSNotFound)
+			return [self.images objectAtIndex:index];
+	}
+	return nil;
+}
+
+
 #if ! __has_feature(objc_arc)
 - (void) dealloc {
 	[values release];
 	[titles release];
+	[images release];
 	[valuesKeyPath release];
 	[titlesKeyPath release];
 	

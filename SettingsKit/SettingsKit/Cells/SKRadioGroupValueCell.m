@@ -76,6 +76,10 @@
 	self.textLabel.text = setting.title;
 	self.detailTextLabel.text = nil;
 	self.accessoryType = [setting.value isEqual:setting.radioGroup.value] ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
+	if (setting.image)
+		self.imageView.image = [UIImage imageNamed:setting.image];
+	else
+		self.imageView.image = nil;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

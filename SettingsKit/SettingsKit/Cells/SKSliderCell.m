@@ -58,6 +58,11 @@
 	self.sliderView.minimumValue = [setting.minimumValue floatValue];
 	self.sliderView.maximumValue = [setting.maximumValue floatValue];
 	self.value = setting.value;
+
+	if (setting.image)
+		self.imageView.image = [UIImage imageNamed:setting.image];
+	else
+		self.imageView.image = nil;
 }
 
 @end

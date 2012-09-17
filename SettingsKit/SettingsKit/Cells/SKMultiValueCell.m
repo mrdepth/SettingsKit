@@ -41,6 +41,11 @@
 	self.textLabel.text = setting.title;
 	self.detailTextLabel.text = setting.valueShortTitle;
 	self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+	NSString* image = setting.valueImage;
+	if (image)
+		self.imageView.image = [UIImage imageNamed:image];
+	else
+		self.imageView.image = nil;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

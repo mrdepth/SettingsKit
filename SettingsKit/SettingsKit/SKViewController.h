@@ -64,6 +64,8 @@
 #define SKDidChangeValue @"DidChangeValue"
 #define SKAction @"Action"
 #define SKShouldPerformAction @"ShouldPerformAction"
+#define SKImage @"Image"
+#define SKImages @"Images"
 
 #define SKGroupKey @"SKGroupKey"
 #define SKVisibleRowsKey @"SKVisibleRowsKey"

@@ -52,6 +52,11 @@
 	[segmentedControl addTarget:self action:@selector(onChangeValue:) forControlEvents:UIControlEventValueChanged];
 	segmentedControl.selectedSegmentIndex = [setting.values indexOfObject:setting.value];
 	self.accessoryView = segmentedControl;
+
+	if (setting.image)
+		self.imageView.image = [UIImage imageNamed:setting.image];
+	else
+		self.imageView.image = nil;
 }
 
 @end

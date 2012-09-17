@@ -11,9 +11,8 @@
 @class SKRadioGroupSpecifierSetting;
 @interface SKRadioGroupValueSpecifierSetting : SKSetting
 @property (nonatomic, readonly, retain) NSObject* value;
-@property (nonatomic, readonly, retain) NSString* title;
 @property (nonatomic, readonly, assign) SKRadioGroupSpecifierSetting* radioGroup;
 
-- (id) initWithRadioGroup:(SKRadioGroupSpecifierSetting*) radioGroup value:(NSObject*) value title:(NSString*) title viewController:(SKViewController *)viewController;
+- (id) initWithRadioGroup:(SKRadioGroupSpecifierSetting*) radioGroup value:(NSObject*) value title:(NSString*) title image:(NSString*) image viewController:(SKViewController *)viewController;
 
 @end

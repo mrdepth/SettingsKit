@@ -53,6 +53,11 @@
 	
 	self.textLabel.text = setting.title;
 	self.switchView.on = [setting.value isEqual:setting.trueValue];
+
+	if (setting.image)
+		self.imageView.image = [UIImage imageNamed:setting.image];
+	else
+		self.imageView.image = nil;
 }
 
 - (IBAction)onSwitch:(id)sender {
