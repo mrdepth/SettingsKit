@@ -18,6 +18,7 @@
 #import "SKRadioGroupSpecifierSetting.h"
 #import "SKRadioGroupValueSpecifierSetting.h"
 #import "SKSegmentedSpecifierSetting.h"
+#import "SKDestructiveButtonSetting.h"
 #import "SKChildPaneCell.h"
 #import "SKMultiValueCell.h"
 
@@ -27,6 +28,7 @@
 #import "SKSwitchCell.h"
 #import "SKTextFieldCell.h"
 #import "SKRadioGroupValueCell.h"
+#import "SKDestructiveButtonCell.h"
 #import "UITableViewCell+Nib.h"
 
 
@@ -285,6 +287,11 @@
 	else if ([setting isKindOfClass:[SKSegmentedSpecifierSetting class]]) {
 		cellIdentifier = @"SKSegmentedCell";
 		cellClass = [SKSegmentedCell class];
+	}
+	else if ([setting isKindOfClass:[SKDestructiveButtonSetting class]]) {
+		cellIdentifier = @"SKDestructiveButtonCell";
+		cellClass = [SKDestructiveButtonCell class];
+		nibName = cellIdentifier;
 	}
 	else {
 		return nil;

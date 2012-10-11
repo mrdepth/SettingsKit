@@ -17,6 +17,7 @@
 #import "SKGroupSpecifierSetting.h"
 #import "SKRadioGroupSpecifierSetting.h"
 #import "SKSegmentedSpecifierSetting.h"
+#import "SKDestructiveButtonSetting.h"
 
 @interface SKSetting()
 @property (nonatomic, readwrite, assign) SKViewController* viewController;
@@ -61,6 +62,8 @@
 		setting = [[SKRadioGroupSpecifierSetting alloc] initWithDictionary:dictionary viewController:viewController];
 	else if ([type isEqualToString:SKSegmentedSpecifier])
 		setting = [[SKSegmentedSpecifierSetting alloc] initWithDictionary:dictionary viewController:viewController];
+	else if ([type isEqualToString:SKDestructiveButtonSpecifier])
+		setting = [[SKDestructiveButtonSetting alloc] initWithDictionary:dictionary viewController:viewController];
 #if ! __has_feature(objc_arc)
 	[setting autorelease];
 #endif

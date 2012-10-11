@@ -48,6 +48,7 @@
 
 //New Specifiers
 #define SKSegmentedSpecifier @"SegmentedSpecifier"
+#define SKDestructiveButtonSpecifier @"DestructiveButtonSpecifier"
 
 //Items general settings
 #define SKPredicate @"Predicate"

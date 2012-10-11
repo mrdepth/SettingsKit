@@ -6,6 +6,12 @@
 	<array>
 		<dict>
 			<key>Type</key>
+			<string>DestructiveButtonSpecifier</string>
+			<key>Title</key>
+			<string>Delete</string>
+		</dict>
+		<dict>
+			<key>Type</key>
 			<string>PSRadioGroupSpecifier</string>
 			<key>Title</key>
 			<string>radio text</string>

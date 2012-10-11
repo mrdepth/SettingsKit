@@ -42,6 +42,10 @@
 		12C3AAE515E23077004AAF5D /* SKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C3AAC515E23077004AAF5D /* SKViewController.m */; };
 		12C3AAE615E23077004AAF5D /* CaptionTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C3AAC815E23077004AAF5D /* CaptionTextField.m */; };
 		12C3AAE715E23077004AAF5D /* UITableViewCell+Nib.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C3AACA15E23077004AAF5D /* UITableViewCell+Nib.m */; };
+		12DDACE71626AC4900291414 /* SettingsKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 12DDACE61626AC4900291414 /* SettingsKit.bundle */; };
+		12DDACEB1626AD7200291414 /* SKDestructiveButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 12DDACEA1626AD7200291414 /* SKDestructiveButtonCell.m */; };
+		12DDACED1626AD8100291414 /* SKDestructiveButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12DDACEC1626AD8100291414 /* SKDestructiveButtonCell.xib */; };
+		12DDACF01626ADD200291414 /* SKDestructiveButtonSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 12DDACEF1626ADD200291414 /* SKDestructiveButtonSetting.m */; };
 		71B0D68915DFA74500156730 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 71B0D68815DFA74500156730 /* Settings.bundle */; };
 /* End PBXBuildFile section */
 
@@ -111,6 +115,12 @@
 		12C3AAC815E23077004AAF5D /* CaptionTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptionTextField.m; sourceTree = "<group>"; };
 		12C3AAC915E23077004AAF5D /* UITableViewCell+Nib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+Nib.h"; sourceTree = "<group>"; };
 		12C3AACA15E23077004AAF5D /* UITableViewCell+Nib.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+Nib.m"; sourceTree = "<group>"; };
+		12DDACE61626AC4900291414 /* SettingsKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SettingsKit.bundle; sourceTree = "<group>"; };
+		12DDACE91626AD7200291414 /* SKDestructiveButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKDestructiveButtonCell.h; sourceTree = "<group>"; };
+		12DDACEA1626AD7200291414 /* SKDestructiveButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKDestructiveButtonCell.m; sourceTree = "<group>"; };
+		12DDACEC1626AD8100291414 /* SKDestructiveButtonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SKDestructiveButtonCell.xib; sourceTree = "<group>"; };
+		12DDACEE1626ADD200291414 /* SKDestructiveButtonSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKDestructiveButtonSetting.h; sourceTree = "<group>"; };
+		12DDACEF1626ADD200291414 /* SKDestructiveButtonSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKDestructiveButtonSetting.m; sourceTree = "<group>"; };
 		71B0D68815DFA74500156730 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -181,6 +191,7 @@
 		12C3AA9015E23077004AAF5D /* SettingsKit */ = {
 			isa = PBXGroup;
 			children = (
+				12DDACE61626AC4900291414 /* SettingsKit.bundle */,
 				12C3AA9115E23077004AAF5D /* Cells */,
 				12C3AAA815E23077004AAF5D /* Settings */,
 				12C3AAC415E23077004AAF5D /* SKViewController.h */,
@@ -215,6 +226,9 @@
 				12C3AAA515E23077004AAF5D /* SKTextFieldCell.xib */,
 				12C3AAA615E23077004AAF5D /* SKTitleValueCell.h */,
 				12C3AAA715E23077004AAF5D /* SKTitleValueCell.m */,
+				12DDACE91626AD7200291414 /* SKDestructiveButtonCell.h */,
+				12DDACEA1626AD7200291414 /* SKDestructiveButtonCell.m */,
+				12DDACEC1626AD8100291414 /* SKDestructiveButtonCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -249,6 +263,8 @@
 				12C3AAC115E23077004AAF5D /* SKTitleValueSpecifierSetting.m */,
 				12C3AAC215E23077004AAF5D /* SKToggleSwitchSpecifierSetting.h */,
 				12C3AAC315E23077004AAF5D /* SKToggleSwitchSpecifierSetting.m */,
+				12DDACEE1626ADD200291414 /* SKDestructiveButtonSetting.h */,
+				12DDACEF1626ADD200291414 /* SKDestructiveButtonSetting.m */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -321,6 +337,8 @@
 				12C3AAD215E23077004AAF5D /* SKSliderCell.xib in Resources */,
 				12C3AAD415E23077004AAF5D /* SKSwitchCell.xib in Resources */,
 				12C3AAD615E23077004AAF5D /* SKTextFieldCell.xib in Resources */,
+				12DDACE71626AC4900291414 /* SettingsKit.bundle in Resources */,
+				12DDACED1626AD8100291414 /* SKDestructiveButtonCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +376,8 @@
 				12C3AAE515E23077004AAF5D /* SKViewController.m in Sources */,
 				12C3AAE615E23077004AAF5D /* CaptionTextField.m in Sources */,
 				12C3AAE715E23077004AAF5D /* UITableViewCell+Nib.m in Sources */,
+				12DDACEB1626AD7200291414 /* SKDestructiveButtonCell.m in Sources */,
+				12DDACF01626ADD200291414 /* SKDestructiveButtonSetting.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
