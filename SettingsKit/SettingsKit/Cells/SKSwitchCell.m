@@ -52,6 +52,7 @@
 	[super setSetting:setting];
 	
 	self.textLabel.text = setting.title;
+	self.textLabel.textAlignment = setting.textAlignment;
 	self.switchView.on = [setting.value isEqual:setting.trueValue];
 
 	if (setting.image)

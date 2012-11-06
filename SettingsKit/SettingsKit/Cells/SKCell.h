@@ -20,6 +20,6 @@
 @property (nonatomic, assign) id<SCTableViewCellDelegate> delegate;
 
 + (BOOL) allowsReusing;
-- (void)didChangeValue;
+- (BOOL) didChangeValue;
 
 @end

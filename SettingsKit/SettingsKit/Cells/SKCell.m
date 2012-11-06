@@ -53,7 +53,7 @@
 - (void) setValue:(NSObject *)value {
 }
 
-- (void)didChangeValue {
+- (BOOL) didChangeValue {
 	if ([self.setting isKindOfClass:[SKKeyValueSetting class]]) {
 		SKKeyValueSetting* keyValueSetting = (SKKeyValueSetting*) self.setting;
 		BOOL canChangeValue = YES;
@@ -78,8 +78,10 @@
 				[invocation invoke];
 			}
 			[self.setting.viewController updateAnimated:YES];
+			return YES;
 		}
 	}
+	return NO;
 }
 
 @end

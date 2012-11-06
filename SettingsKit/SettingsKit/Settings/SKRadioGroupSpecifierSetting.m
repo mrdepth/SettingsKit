@@ -28,16 +28,6 @@
 		
 		if (footerText)
 			self.footerText = NSLocalizedStringFromTableInBundle(footerText, self.viewController.stringsTable, self.viewController.bundle, nil);
-
-		self.settings = [NSMutableArray array];
-		int n = self.values.count;
-		for (int i = 0; i < n; i++) {
-			SKRadioGroupValueSpecifierSetting* setting = [[SKRadioGroupValueSpecifierSetting alloc] initWithRadioGroup:self value:[self.values objectAtIndex:i] title:[self.titles objectAtIndex:i] image: [self.images objectAtIndex:i] viewController:self.viewController];
-#if ! __has_feature(objc_arc)
-			[setting autorelease];
-#endif
-			[self.settings addObject:setting];
-		}
 	}
 	return self;
 }
@@ -58,6 +48,19 @@
 		return [self.viewController valueForKey:self.footerTextKeyPath];
 	else
 		return nil;
+}
+
+- (void) update {
+	[super update];
+	self.settings = [NSMutableArray array];
+	int n = self.values.count;
+	for (int i = 0; i < n; i++) {
+		SKRadioGroupValueSpecifierSetting* setting = [[SKRadioGroupValueSpecifierSetting alloc] initWithRadioGroup:self value:[self.values objectAtIndex:i] title:[self.titles objectAtIndex:i] image: [self.images objectAtIndex:i] viewController:self.viewController];
+#if ! __has_feature(objc_arc)
+		[setting autorelease];
+#endif
+		[self.settings addObject:setting];
+	}
 }
 
 @end

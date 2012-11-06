@@ -22,9 +22,6 @@
 	if (self = [super initWithDictionary:dictionary viewController:aViewController]) {
 		self.shortTitles = [dictionary valueForKey:SKShortTitles];
 		self.shortTitlesKeyPath = [dictionary valueForKey:SKShortTitlesKeyPath];
-		
-		if (!self.shortTitles && self.shortTitlesKeyPath)
-			self.shortTitles = [self.viewController valueForKey:self.shortTitlesKeyPath];
 	}
 	return self;
 }
@@ -44,6 +41,12 @@
 			return [self.shortTitles objectAtIndex:index];
 	}
 	return self.valueTitle;
+}
+
+- (void) update {
+	[super update];
+	if (self.shortTitlesKeyPath)
+		self.shortTitles = [self.viewController valueForKey:self.shortTitlesKeyPath];
 }
 
 @end

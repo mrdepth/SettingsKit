@@ -85,8 +85,4 @@
 		[self.viewController.settingsObject setValue:value forKey:self.key];
 }
 
-- (void) refresh {
-	
-}
-
 @end

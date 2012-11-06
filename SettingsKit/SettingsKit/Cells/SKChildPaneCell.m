@@ -38,6 +38,7 @@
 	[super setSetting:setting];
 	
 	self.textLabel.text = setting.title;
+	self.textLabel.textAlignment = setting.textAlignment;
 	self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 	
 	if (setting.image)

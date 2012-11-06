@@ -138,6 +138,13 @@
 }
 
 - (void) updateAnimated:(BOOL) animated {
+	for (NSDictionary* section in self.sections) {
+		SKSetting<SKGroupSetting>* group = [section valueForKey:SKGroupKey];
+		[group update];
+		for (SKSetting* setting in group.settings)
+			[setting update];
+	}
+
 	NSMutableIndexSet* sectionsToDelete = [NSMutableIndexSet indexSet];
 	NSMutableIndexSet* sectionsToInsert = [NSMutableIndexSet indexSet];
 	NSMutableArray* rowsToDelete = [NSMutableArray array];
@@ -152,7 +159,7 @@
 			NSInteger rowIndex = 0;
 			
 			for (SKSetting* setting in visibleRows) {
-				if (setting.hidden) {
+				if (setting.hidden || ![group.settings containsObject:setting]) {
 					[rowIndexesToDelete addIndex:rowIndex];
 					[rowsToDelete addObject:[NSIndexPath indexPathForRow:rowIndex inSection:sectionIndex]];
 				}
@@ -233,6 +240,10 @@
 	return nil;
 }
 
+- (SKSetting<SKGroupSetting>*) settingGroupWithSection:(NSInteger) section {
+	return [[self.visibleSections objectAtIndex:section] valueForKey:SKGroupKey];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -303,7 +314,7 @@
 			if (nibName)
 				cell = [cellClass cellWithNibName:nibName bundle:nil reuseIdentifier:cellIdentifier];
 			else {
-				cell = [[cellClass alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier];
+				cell = [[cellClass alloc] initWithStyle:setting.cellStyle reuseIdentifier:cellIdentifier];
 #if ! __has_feature(objc_arc)
 				[cell autorelease];
 #endif
@@ -319,7 +330,7 @@
 			if (nibName)
 				cell = [cellClass cellWithNibName:nibName bundle:nil reuseIdentifier:cellIdentifier];
 			else {
-				cell = [[cellClass alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier];
+				cell = [[cellClass alloc] initWithStyle:setting.cellStyle reuseIdentifier:cellIdentifier];
 #if ! __has_feature(objc_arc)
 				[cell autorelease];
 #endif

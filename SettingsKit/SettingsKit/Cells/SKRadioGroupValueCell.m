@@ -74,6 +74,7 @@
 	[super setSetting:setting];
 	
 	self.textLabel.text = setting.title;
+	self.textLabel.textAlignment = setting.textAlignment;
 	self.detailTextLabel.text = nil;
 	self.accessoryType = [setting.value isEqual:setting.radioGroup.value] ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
 	if (setting.image)
@@ -86,14 +87,15 @@
 	[super setSelected:selected animated:animated];
 	if (selected) {
 		NSObject* oldValue = self.setting.radioGroup.value;
-		[self didChangeValue];
-		NSObject* newValue = self.setting.radioGroup.value;
-		if (![newValue isEqual:oldValue]) {
-			NSIndexPath* indexPath = [self.setting.viewController.tableView indexPathForCell:self];
-			SKRadioGroupValueCell* cell = (SKRadioGroupValueCell*) [self.setting.viewController.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:[self.setting.radioGroup.values indexOfObject:oldValue] inSection:indexPath.section]];
-			cell.accessoryType = UITableViewCellAccessoryNone;
-			self.accessoryType = UITableViewCellAccessoryCheckmark;
-			
+		if ([self didChangeValue]) {
+			NSObject* newValue = self.setting.radioGroup.value;
+			if (newValue && oldValue && ![newValue isEqual:oldValue]) {
+				NSIndexPath* indexPath = [self.setting.viewController.tableView indexPathForCell:self];
+				SKRadioGroupValueCell* cell = (SKRadioGroupValueCell*) [self.setting.viewController.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:[self.setting.radioGroup.values indexOfObject:oldValue] inSection:indexPath.section]];
+				cell.accessoryType = UITableViewCellAccessoryNone;
+				self.accessoryType = UITableViewCellAccessoryCheckmark;
+				
+			}
 		}
 	}
 }

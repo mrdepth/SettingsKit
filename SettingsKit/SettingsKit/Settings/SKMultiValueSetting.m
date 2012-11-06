@@ -34,9 +34,6 @@
 		self.titlesKeyPath = [dictionary valueForKey:SKTitlesKeyPath];
 		self.images = [dictionary valueForKey:SKImages];
 		
-		if (!self.values && self.valuesKeyPath)
-			self.values = [self.viewController valueForKey:self.valuesKeyPath];
-		
 
 		if (titlesTmp) {
 			NSMutableArray* localizedTitles = [NSMutableArray array];
@@ -45,9 +42,6 @@
 			}
 			self.titles = localizedTitles;
 		}
-		else if (!titlesTmp && self.titlesKeyPath)
-			self.titles = [self.viewController valueForKey:self.titlesKeyPath];
-		
 	}
 	return self;
 }
@@ -82,5 +76,13 @@
 	[super dealloc];
 }
 #endif
+
+- (void) update {
+	[super update];
+	if (self.valuesKeyPath)
+		self.values = [self.viewController valueForKey:self.valuesKeyPath];
+	if (self.titlesKeyPath)
+		self.titles = [self.viewController valueForKey:self.titlesKeyPath];
+}
 
 @end

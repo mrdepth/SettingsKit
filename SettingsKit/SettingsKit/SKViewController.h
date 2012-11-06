@@ -61,6 +61,8 @@
 #define SKFooterTextKeyPath @"FooterTextKeyPath"
 #define SKValueKeyPath @"ValueKeyPath"
 #define SKAccessoryType @"AccessoryType"
+#define SKTextAlignment @"TextAlignment"
+#define SKCellStyle @"CellStyle"
 #define SKShouldChangeValue @"ShouldChangeValue"
 #define SKDidChangeValue @"DidChangeValue"
 #define SKAction @"Action"
@@ -73,6 +75,8 @@
 
 
 @class SKSetting;
+@protocol SKGroupSetting;
+
 @interface SKViewController : UITableViewController
 @property (nonatomic, readonly, retain) NSObject* settingsObject;
 @property (nonatomic, readonly, retain) NSString* stringsTable;
@@ -83,5 +87,6 @@
 
 - (void) updateAnimated:(BOOL) animated;
 - (NSIndexPath*) indexPathForSetting:(SKSetting*) setting;
+- (SKSetting<SKGroupSetting>*) settingGroupWithSection:(NSInteger) section;
 
 @end

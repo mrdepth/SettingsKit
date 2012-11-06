@@ -43,6 +43,7 @@
 - (void) setSetting:(SKSegmentedSpecifierSetting *)setting {
 	[super setSetting:setting];
 	self.textLabel.text = setting.title;
+	self.textLabel.textAlignment = setting.textAlignment;
 	
 	UISegmentedControl* segmentedControl = [[UISegmentedControl alloc] initWithItems:setting.titles];
 #if ! __has_feature(objc_arc)

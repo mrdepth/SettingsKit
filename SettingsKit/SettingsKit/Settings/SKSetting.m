@@ -23,6 +23,8 @@
 @property (nonatomic, readwrite, assign) SKViewController* viewController;
 @property (nonatomic, readwrite, retain) NSString* title;
 @property (nonatomic, readwrite, retain) NSString* image;
+@property (nonatomic, readwrite, assign) UITextAlignment textAlignment;
+@property (nonatomic, readwrite, assign) UITableViewCellStyle cellStyle;
 @property (nonatomic, readwrite, retain) NSString* onlyDisplayOnInterfaceIdiom;
 @property (nonatomic, retain) NSString* titleKeyPath;
 @property (nonatomic, retain) NSPredicate* predicate;
@@ -76,12 +78,28 @@
 		
 		self.title = [dictionary valueForKey:SKTitle];
 		self.titleKeyPath = [dictionary valueForKey:SKTitleKeyPath];
-		if (!self.title && self.titleKeyPath)
-			self.title = [self.viewController valueForKey:self.titleKeyPath];
 		if (self.title)
 			self.title = NSLocalizedStringFromTableInBundle(self.title, self.viewController.stringsTable, self.viewController.bundle, nil);
 		self.image = [dictionary valueForKey:SKImage];
 		
+		NSString* textAlignmentString = [dictionary valueForKey:SKTextAlignment];
+		if ([textAlignmentString isEqualToString:@"UITextAlignmentCenter"])
+			self.textAlignment = UITextAlignmentCenter;
+		else if ([textAlignmentString isEqualToString:@"UITextAlignmentRight"])
+			self.textAlignment = UITextAlignmentRight;
+		else
+			self.textAlignment = UITextAlignmentLeft;
+
+		NSString* cellStyleString = [dictionary valueForKey:SKCellStyle];
+		if ([cellStyleString isEqualToString:@"UITableViewCellStyleDefault"])
+			self.cellStyle = UITableViewCellStyleDefault;
+		else if ([textAlignmentString isEqualToString:@"UITableViewCellStyleValue2"])
+			self.cellStyle = UITableViewCellStyleValue2;
+		else if ([textAlignmentString isEqualToString:@"UITableViewCellStyleSubtitle"])
+			self.cellStyle = UITableViewCellStyleSubtitle;
+		else
+			self.cellStyle = UITableViewCellStyleValue1;
+
 		self.displayOnCurrentInterfaceIdiom = YES;
 		self.onlyDisplayOnInterfaceIdiom = [dictionary valueForKey:SKOnlyDisplayOnInterfaceIdiom];
 		if (self.onlyDisplayOnInterfaceIdiom) {
@@ -106,6 +124,7 @@
 
 			self.conditionSelector = NSSelectorFromString(conditionSelectorString);
 		}
+		[self update];
 	}
 	return self;
 }
@@ -146,6 +165,11 @@
 	}
 	else
 		return NO;
+}
+
+- (void) update {
+	if (self.titleKeyPath)
+		self.title = [self.viewController valueForKey:self.titleKeyPath];
 }
 
 @end

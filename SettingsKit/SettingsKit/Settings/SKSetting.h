@@ -13,11 +13,14 @@
 @property (nonatomic, readonly, assign) SKViewController* viewController;
 @property (nonatomic, readonly, retain) NSString* title;
 @property (nonatomic, readonly, retain) NSString* image;
+@property (nonatomic, readonly, assign) UITextAlignment textAlignment;
+@property (nonatomic, readonly, assign) UITableViewCellStyle cellStyle;
 @property (nonatomic, readonly, retain) NSString* onlyDisplayOnInterfaceIdiom;
 @property (nonatomic, readonly, getter = isHidden) BOOL hidden;
 
 + (id) settingWithDictionary:(NSDictionary*) dictionary viewController:(SKViewController*) viewController;
 - (id) initWithDictionary:(NSDictionary*) dictionary viewController:(SKViewController*) viewController;
 - (id) initWithViewController:(SKViewController*) aViewController;
+- (void) update;
 
 @end
