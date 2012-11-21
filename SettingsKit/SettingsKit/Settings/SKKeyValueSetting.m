@@ -73,7 +73,7 @@
 	if (!value)
 		value = self.defaultValue;
 	if (!value && self.defaultValueKeyPath)
-		value = [self.viewController.settingsObject valueForKey:self.defaultValueKeyPath];
+		value = [self.viewController valueForKey:self.defaultValueKeyPath];
 	
 	if (!value && self.valueKeyPath)
 		value = [self.viewController valueForKey:self.valueKeyPath];
