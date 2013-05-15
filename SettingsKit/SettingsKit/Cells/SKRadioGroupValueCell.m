@@ -40,7 +40,7 @@
 	return self.setting.value;
 }
 
-- (void)didChangeValue {
+- (BOOL)didChangeValue {
 	BOOL canChangeValue = YES;
 	NSObject* value = self.value;
 	
@@ -67,7 +67,9 @@
 			[invocation invoke];
 		}
 		[self.setting.viewController updateAnimated:YES];
+		return YES;
 	}
+	return NO;
 }
 
 - (void) setSetting:(SKRadioGroupValueSpecifierSetting *)setting {

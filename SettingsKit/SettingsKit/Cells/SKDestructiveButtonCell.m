@@ -8,6 +8,7 @@
 
 #import "SKDestructiveButtonCell.h"
 #import "SKDestructiveButtonSetting.h"
+#import "SKViewController.h"
 
 @interface SKDestructiveButtonCell()
 @property (nonatomic, retain) SKDestructiveButtonSetting* setting;
