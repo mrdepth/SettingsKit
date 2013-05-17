@@ -52,15 +52,19 @@
 
 - (void) update {
 	[super update];
-	self.settings = [NSMutableArray array];
-	int n = self.values.count;
-	for (int i = 0; i < n; i++) {
-		SKRadioGroupValueSpecifierSetting* setting = [[SKRadioGroupValueSpecifierSetting alloc] initWithRadioGroup:self value:[self.values objectAtIndex:i] title:[self.titles objectAtIndex:i] image: [self.images objectAtIndex:i] viewController:self.viewController];
+	//if (!self.settings) {
+		int n = self.values.count;
+//		if (n > 0) {
+			self.settings = [NSMutableArray array];
+			for (int i = 0; i < n; i++) {
+				SKRadioGroupValueSpecifierSetting* setting = [[SKRadioGroupValueSpecifierSetting alloc] initWithRadioGroup:self value:[self.values objectAtIndex:i] title:[self.titles objectAtIndex:i] image: [self.images objectAtIndex:i] viewController:self.viewController];
 #if ! __has_feature(objc_arc)
-		[setting autorelease];
+				[setting autorelease];
 #endif
-		[self.settings addObject:setting];
-	}
+				[self.settings addObject:setting];
+			}
+		//}
+	//}
 }
 
 @end

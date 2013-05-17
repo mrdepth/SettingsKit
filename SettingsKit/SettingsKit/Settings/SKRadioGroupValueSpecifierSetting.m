@@ -37,4 +37,22 @@
 }
 #endif
 
+- (BOOL) isEqual:(id)object {
+	if ([object isKindOfClass:[self class]]) {
+		SKRadioGroupValueSpecifierSetting* other = object;
+		
+		if (self.radioGroup != other.radioGroup)
+			return  NO;
+		if ((self.value || other.value) && ![self.value isEqual:other.value])
+			return NO;
+		if ((self.title || other.title) && ![self.title isEqual:other.title])
+			return NO;
+		if ((self.image || other.image) && ![self.image isEqual:other.image])
+			return NO;
+		return YES;
+	}
+	else
+		return NO;
+}
+
 @end
