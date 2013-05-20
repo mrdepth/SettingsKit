@@ -12,6 +12,7 @@
 @interface SKMultiValueSpecifierSetting()
 @property (nonatomic, readwrite, retain) NSArray* shortTitles;
 @property (nonatomic, retain) NSString* shortTitlesKeyPath;
+@property (nonatomic, readwrite, retain) NSString* className;
 @end
 
 @implementation SKMultiValueSpecifierSetting
@@ -22,6 +23,7 @@
 	if (self = [super initWithDictionary:dictionary viewController:aViewController]) {
 		self.shortTitles = [dictionary valueForKey:SKShortTitles];
 		self.shortTitlesKeyPath = [dictionary valueForKey:SKShortTitlesKeyPath];
+		self.className = [dictionary valueForKey:SKClassName];
 	}
 	return self;
 }

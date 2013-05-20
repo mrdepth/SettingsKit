@@ -50,6 +50,18 @@
 					[self.viewController.settingsObject setValue:value forKey:self.key];
 			}
 		}
+		
+		NSString* accessoryTypeString = [dictionary valueForKey:SKAccessoryType];
+		if ([accessoryTypeString isEqualToString:@"Checkmark"])
+			_accessoryType = UITableViewCellAccessoryCheckmark;
+		else if ([accessoryTypeString isEqualToString:@"DetailDisclosureButton"])
+			_accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+		else if ([accessoryTypeString isEqualToString:@"DisclosureIndicator"])
+			_accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+		else
+			_accessoryType = UITableViewCellAccessoryNone;
+
+		self.accessoryImage = [dictionary valueForKey:SKAccessoryImage];
 	}
 	return self;
 }

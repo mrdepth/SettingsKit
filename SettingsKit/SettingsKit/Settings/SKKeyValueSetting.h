@@ -14,6 +14,8 @@
 @property (nonatomic, readonly, retain) NSObject* defaultValue;
 @property (nonatomic, readonly) SEL shouldChangeValueSelector;
 @property (nonatomic, readonly) SEL didChangeValueSelector;
+@property (nonatomic, readonly) UITableViewCellAccessoryType accessoryType;
+@property (nonatomic, retain) NSString* accessoryImage;
 
 
 @end

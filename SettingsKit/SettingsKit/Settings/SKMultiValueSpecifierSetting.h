@@ -11,4 +11,5 @@
 @interface SKMultiValueSpecifierSetting : SKMultiValueSetting
 @property (nonatomic, readonly, retain) NSArray* shortTitles;
 @property (nonatomic, readonly) NSString* valueShortTitle;
+@property (nonatomic, readonly, retain) NSString* className;
 @end

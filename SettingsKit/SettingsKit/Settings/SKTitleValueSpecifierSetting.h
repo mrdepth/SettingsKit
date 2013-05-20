@@ -10,6 +10,4 @@
 
 @interface SKTitleValueSpecifierSetting : SKMultiValueSetting
 @property (nonatomic, readonly) SEL action;
-@property (nonatomic, readonly) UITableViewCellAccessoryType accessoryType;
-@property (nonatomic, retain) NSString* accessoryImage;
 @end

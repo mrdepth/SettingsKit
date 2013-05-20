@@ -41,7 +41,16 @@
 	self.textLabel.text = setting.title;
 	self.textLabel.textAlignment = setting.textAlignment;
 	self.detailTextLabel.text = setting.valueShortTitle;
-	self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+
+	if (setting.accessoryImage)
+		self.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:setting.accessoryImage]];
+	else {
+		self.accessoryView = nil;
+		self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+	}
+
+		
+//	self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 	NSString* image = setting.valueImage;
 	if (image)
 		self.imageView.image = [UIImage imageNamed:image];
@@ -52,12 +61,17 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
 	[super setSelected:selected animated:animated];
 	if (selected) {
-		NSDictionary* group = @{SKType : SKPSRadioGroupSpecifier, SKTitle : self.setting.title, SKKey : self.setting.key, SKTitles : self.setting.titles, SKValues : self.setting.values, SKDefaultValue : self.setting.defaultValue};
+		NSMutableDictionary* group = [NSMutableDictionary dictionaryWithDictionary:@{SKType : SKPSRadioGroupSpecifier, SKKey : self.setting.key, SKTitles : self.setting.titles, SKValues : self.setting.values, SKDefaultValue : self.setting.defaultValue}];
+		[group setValue:self.setting.accessoryCheckmarkImage forKey:SKAccessoryCheckmarkImage];
+
 		NSMutableDictionary* preferences = [NSMutableDictionary dictionary];
 		[preferences setValue:self.setting.title forKey:SKTitle];
 		[preferences setValue:@[group] forKey:SKPreferenceSpecifiers];
 		if (self.setting.viewController.stringsTable)
 			[preferences setValue:self.setting.viewController.stringsTable forKey:SKStringsTable];
+		
+		if (self.setting.className)
+			[preferences setValue:self.setting.className forKey:SKClassName];
 		
 		SKViewController* controller = [SKViewController viewControllerWithPreferences:preferences bundle:self.setting.viewController.bundle settingsObject:self.setting.viewController.settingsObject];
 		objc_setAssociatedObject(controller, @"parentSKViewController", self.setting.viewController, OBJC_ASSOCIATION_ASSIGN);
