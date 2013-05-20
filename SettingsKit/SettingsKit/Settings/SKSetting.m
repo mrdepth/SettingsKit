@@ -124,6 +124,7 @@
 
 			self.conditionSelector = NSSelectorFromString(conditionSelectorString);
 		}
+		
 		[self update];
 	}
 	return self;

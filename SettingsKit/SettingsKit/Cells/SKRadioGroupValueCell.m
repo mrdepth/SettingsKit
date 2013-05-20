@@ -78,7 +78,14 @@
 	self.textLabel.text = setting.title;
 	self.textLabel.textAlignment = setting.textAlignment;
 	self.detailTextLabel.text = nil;
-	self.accessoryType = [setting.value isEqual:setting.radioGroup.value] ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
+
+	self.accessoryView = nil;
+
+	if (setting.radioGroup.accessoryCheckmarkImage)
+		self.accessoryView = [setting.value isEqual:setting.radioGroup.value] ? [[UIImageView alloc] initWithImage:[UIImage imageNamed:setting.radioGroup.accessoryCheckmarkImage]] : nil;
+	else
+		self.accessoryType = [setting.value isEqual:setting.radioGroup.value] ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
+	
 	if (setting.image)
 		self.imageView.image = [UIImage imageNamed:setting.image];
 	else
@@ -94,9 +101,14 @@
 			if (newValue && oldValue && ![newValue isEqual:oldValue]) {
 				NSIndexPath* indexPath = [self.setting.viewController.tableView indexPathForCell:self];
 				SKRadioGroupValueCell* cell = (SKRadioGroupValueCell*) [self.setting.viewController.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:[self.setting.radioGroup.values indexOfObject:oldValue] inSection:indexPath.section]];
-				cell.accessoryType = UITableViewCellAccessoryNone;
-				self.accessoryType = UITableViewCellAccessoryCheckmark;
-				
+				if (self.setting.radioGroup.accessoryCheckmarkImage) {
+					cell.accessoryView = nil;
+					self.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:self.setting.radioGroup.accessoryCheckmarkImage]];
+				}
+				else {
+					cell.accessoryType = UITableViewCellAccessoryNone;
+					self.accessoryType = UITableViewCellAccessoryCheckmark;
+				}
 			}
 		}
 	}

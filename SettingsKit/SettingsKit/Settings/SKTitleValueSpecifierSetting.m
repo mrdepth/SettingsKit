@@ -25,6 +25,8 @@
 			accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 		else
 			accessoryType = UITableViewCellAccessoryNone;
+		
+		self.accessoryImage = [dictionary valueForKey:SKAccessoryImage];
 	}
 	return self;
 }

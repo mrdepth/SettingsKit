@@ -12,6 +12,7 @@
 @property (nonatomic, readonly, retain) NSArray* values;
 @property (nonatomic, readonly, retain) NSArray* titles;
 @property (nonatomic, readonly, retain) NSArray* images;
+@property (nonatomic, readonly, retain) NSString* accessoryCheckmarkImage;
 @property (nonatomic, readonly) NSString* valueTitle;
 @property (nonatomic, readonly) NSString* valueImage;
 

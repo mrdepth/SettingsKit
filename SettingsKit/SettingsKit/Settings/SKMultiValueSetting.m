@@ -13,6 +13,7 @@
 @property (nonatomic, readwrite, retain) NSArray* values;
 @property (nonatomic, readwrite, retain) NSArray* titles;
 @property (nonatomic, readwrite, retain) NSArray* images;
+@property (nonatomic, readwrite, retain) NSString* accessoryCheckmarkImage;
 @property(nonatomic, retain) NSString* valuesKeyPath;
 @property(nonatomic, retain) NSString* titlesKeyPath;
 
@@ -33,7 +34,7 @@
 		self.valuesKeyPath = [dictionary valueForKey:SKValuesKeyPath];
 		self.titlesKeyPath = [dictionary valueForKey:SKTitlesKeyPath];
 		self.images = [dictionary valueForKey:SKImages];
-		
+		self.accessoryCheckmarkImage = [dictionary valueForKey:SKAccessoryCheckmarkImage];
 
 		if (titlesTmp) {
 			NSMutableArray* localizedTitles = [NSMutableArray array];

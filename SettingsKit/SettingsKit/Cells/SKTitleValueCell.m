@@ -46,7 +46,14 @@
 			valueTitle = (NSString*) value;
 	}
 	self.detailTextLabel.text = valueTitle;
-	self.accessoryType = setting.accessoryType;
+
+	self.accessoryView = nil;
+
+	if (setting.accessoryImage)
+		self.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:setting.accessoryImage]];
+	else {
+		self.accessoryType = setting.accessoryType;
+	}
 
 	NSString* image = setting.image;
 	if (!image)

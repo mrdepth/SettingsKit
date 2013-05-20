@@ -72,6 +72,8 @@
 
 #define SKGroupKey @"SKGroupKey"
 #define SKVisibleRowsKey @"SKVisibleRowsKey"
+#define SKAccessoryCheckmarkImage @"AccessoryCheckmarkImage"
+#define SKAccessoryImage @"AccessoryImage"
 
 
 @class SKSetting;
