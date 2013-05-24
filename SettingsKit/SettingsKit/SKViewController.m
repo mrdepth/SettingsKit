@@ -220,6 +220,10 @@
 	}
 	else
 		[self.tableView reloadData];
+	
+	for (SKCell* cell in [self.tableView visibleCells]) {
+		cell.setting = cell.setting;
+	}
 }
 
 - (NSIndexPath*) indexPathForSetting:(SKSetting*) setting {
