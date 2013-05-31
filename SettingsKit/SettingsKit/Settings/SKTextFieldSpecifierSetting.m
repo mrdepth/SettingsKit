@@ -9,6 +9,10 @@
 #import "SKTextFieldSpecifierSetting.h"
 #import "SKViewController.h"
 
+@interface SKTextFieldSpecifierSetting()
+@property (nonatomic, readwrite, retain) NSString* placeholder;
+@end
+
 @implementation SKTextFieldSpecifierSetting
 @synthesize secureTextEntry;
 @synthesize keyboardType;
@@ -48,6 +52,8 @@
 			autocorrectionType = UITextAutocorrectionTypeYes;
 		else
 			autocorrectionType = UITextAutocorrectionTypeDefault;
+		
+		self.placeholder = [dictionary valueForKey:SKPlaceholder];
 	}
 	return self;
 }

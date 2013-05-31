@@ -13,6 +13,6 @@
 @property (nonatomic, readonly) UIKeyboardType keyboardType;
 @property (nonatomic, readonly) UITextAutocapitalizationType autocapitalizationType;
 @property (nonatomic, readonly) UITextAutocorrectionType autocorrectionType;
-
+@property (nonatomic, readonly, retain) NSString* placeholder;
 
 @end

@@ -67,6 +67,7 @@
 	self.textField.keyboardType = setting.keyboardType;
 	self.textField.autocapitalizationType = setting.autocapitalizationType;
 	self.textField.autocorrectionType = setting.autocorrectionType;
+	self.textField.placeholder = setting.placeholder;
 
 	if (setting.image)
 		self.imageView.image = [UIImage imageNamed:setting.image];

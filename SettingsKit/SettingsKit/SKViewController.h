@@ -74,6 +74,7 @@
 #define SKVisibleRowsKey @"SKVisibleRowsKey"
 #define SKAccessoryCheckmarkImage @"AccessoryCheckmarkImage"
 #define SKAccessoryImage @"AccessoryImage"
+#define SKPlaceholder @"Placeholder"
 
 
 @class SKSetting;
