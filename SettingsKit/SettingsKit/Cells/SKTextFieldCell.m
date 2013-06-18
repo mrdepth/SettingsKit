@@ -61,14 +61,16 @@
 	[super setSetting:setting];
 	
 	self.textField.caption = setting.title;
-	self.textField.text = (NSString*) setting.value;
+	
+	if (![self.textField.text isEqualToString:(NSString*) setting.value])
+		self.textField.text = (NSString*) setting.value;
 	
 	self.textField.secureTextEntry = setting.secureTextEntry;
 	self.textField.keyboardType = setting.keyboardType;
 	self.textField.autocapitalizationType = setting.autocapitalizationType;
 	self.textField.autocorrectionType = setting.autocorrectionType;
 	self.textField.placeholder = setting.placeholder;
-
+	
 	if (setting.image)
 		self.imageView.image = [UIImage imageNamed:setting.image];
 	else
