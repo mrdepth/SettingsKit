@@ -221,7 +221,7 @@
 	else
 		[self.tableView reloadData];
 	
-	for (SKCell* cell in [self.tableView visibleCells]) {
+	for (SKCell* cell in [[self.tableView visibleCells] copy]) {
 		cell.setting = cell.setting;
 	}
 }
