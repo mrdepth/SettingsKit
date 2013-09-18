@@ -72,4 +72,11 @@
 	}
 }
 
+- (void) layoutSubviews {
+	[super layoutSubviews];
+	if (self.textLabel.textAlignment == NSTextAlignmentCenter) {
+		self.textLabel.frame = CGRectMake(self.textLabel.frame.origin.x, self.textLabel.frame.origin.y, self.frame.size.width - self.textLabel.frame.origin.x * 2, self.textLabel.frame.size.height);
+	}
+}
+
 @end
