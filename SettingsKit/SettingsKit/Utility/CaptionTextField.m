@@ -43,7 +43,7 @@
 	r.size = [captionLabel sizeThatFits:bounds.size];
 	r.size.width += 5;
 	r.size.height = bounds.size.height - 2;
-	r.origin = CGPointMake(10, 0);
+	r.origin = CGPointMake(15, 0);
 	return r;
 }
 
